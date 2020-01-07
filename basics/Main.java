@@ -50,13 +50,13 @@ public class Main {
 
 
     private synchronized void getTime () {
-    LocalDateTime now = LocalDateTime.now(); 
-    int hour = now.getHour();
-    int minute = now.getMinute();
-    int second = now.getSecond();
    
     
     while (true) {
+      LocalDateTime now = LocalDateTime.now();
+      int hour = now.getHour();
+      int minute = now.getMinute();
+      int second = now.getSecond();
 			System.out.println(String.format("always running program ==> %d:%d:%d", hour, minute, second));
 			try {
 				this.wait(1000);
@@ -64,9 +64,8 @@ public class Main {
  
 				e.printStackTrace();
 			}
-		}
-
-
+    }
+    
   } 
 }
 
