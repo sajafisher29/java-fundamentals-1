@@ -3,12 +3,96 @@
  */
 package linter;
 
+
 import org.junit.Test;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+    @Test public void testGatesFileThatHasErrors() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/gates.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected =
+                "Line 3: Missing semicolon.\n" +
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testNoError() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/noError.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected = "";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testOneError() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/oneError.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected = "Line 3: Missing semicolon.\n";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testSomeErrors() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/someErrors.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected =
+                "Line 5: Missing semicolon.\n" +
+
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testManyErrors() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/manyErrors.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected =
+                "Line 5: Missing semicolon.\n" +
+
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testEmptyFile() {
+
+        App application = new App();
+
+        Path filePath = Paths.get("resources/emptyFile.js");
+
+        String actual = application.javascriptLinter(filePath);
+
+        String expected = "";
+
+        assertEquals(expected, actual);
     }
 }
