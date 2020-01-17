@@ -12,7 +12,6 @@ public class Library {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        System.out.println("map"() = " + map(weeklyMonthTemperatures));
     }
 
     public static int[] roll(int n) {
