@@ -1,7 +1,12 @@
+package inheritance;
+
 import java.util.HashSet;
 
 public class Shop {
-   
+
+    private final String name;
+    private final String description;
+    private final String price;
     private long starsTotal;
     private HashSet<Review> reviews = new HashSet();
 
@@ -30,3 +35,5 @@ public class Shop {
     public HashSet<Review> getReviews() {
         return reviews;
     }
+
+}
