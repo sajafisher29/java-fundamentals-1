@@ -1,3 +1,4 @@
+package inheritance;
 
 import java.util.*;
 
@@ -10,7 +11,7 @@ public class Restaurant {
     private Integer numStars;
     private long starsTotal;
     private long numOfReviews;
-    ArrayList<Review> reviews = new ArrayList<>();
+    ArrayList<Review> reviews = new ArrayList<Review>();
 
     public Restaurant(String name, String price) {
         this.name = name;
@@ -25,3 +26,4 @@ public class Restaurant {
         return price;
     }
 
+}
