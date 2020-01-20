@@ -1,27 +1,46 @@
-
-import java.util.*;
-
+package inheritance;
 
 import java.util.ArrayList;
 
 public class Restaurant {
-    private String name;
-    private String price;
-    private Integer numStars;
-    private long starsTotal;
-    private long numOfReviews;
+    public String name;
+    public String price;
+    public int star;
     ArrayList<Review> reviews = new ArrayList<>();
 
-    public Restaurant(String name, String price) {
+    public Restaurant(String name, String price){
         this.name = name;
         this.price = price;
+        this.star = 0;
     }
 
-    public String getName() {
-        return name;
+    public String toString(){
+        return "Name: " + this.name + ", Price: " + this.price + ", Rating: " + this.star;
     }
 
-    public String getPrice() {
-        return price;
+    public void addReview(Review potato){
+        reviews.add(potato);
+        potato.restaurant = this;
+
+        updateStars();
     }
+
+    private void updateStars(){
+        //create variable to store sum
+        //loop over reviews and add stars
+        //divide sum by number of reviews
+        //update star
+        int total = 0;
+        for (int i = 0; i < reviews.size(); i++){
+            total += reviews.get(i).stars;
+        }
+        total /= reviews.size();
+        this.star = total;
+    }
+
+
+}
+
+
+
 
