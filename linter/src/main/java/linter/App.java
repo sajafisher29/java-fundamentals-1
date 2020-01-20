@@ -4,8 +4,6 @@
 package linter;
 
 
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
