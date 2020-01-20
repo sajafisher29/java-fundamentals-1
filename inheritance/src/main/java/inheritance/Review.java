@@ -6,6 +6,8 @@ public class Review {
     public String author;
     public int stars;
     public Restaurant restaurant;
+    public Shop shop;
+    public Theater theater;
 
     public Review(String body, String author, int stars){
         this.body = body;
