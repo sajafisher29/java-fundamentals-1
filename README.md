@@ -15,7 +15,8 @@ findSmallestAverage
 method that, given an array of arrays, calculates the average value for each array and return the array with the lowest average
 
 
-
+lab03
+java-fundamentals and linter directory using hashset and integer and tally and test
 
 lab 06
 inheritence
