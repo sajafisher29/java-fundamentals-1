@@ -16,7 +16,9 @@ method that, given an array of arrays, calculates the average value for each arr
 
 
 lab03
-java-fundamentals and linter directory using hashset and integer and tally and test
+java-fundamentals and linter directory using hashset and integer and tally and test This linter application takes in a file path and searches the file for missing semicolons. You should expect the linter() method to return a string that is a list of all the lines that are missing semicolons.
+
+Line: 3 is missing semicolon... etc.
 
 lab 06
 inheritence
