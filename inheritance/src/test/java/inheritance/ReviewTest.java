@@ -22,5 +22,14 @@ public class ReviewTest {
 
     }
 
+    @Test
+    public void testMovieName(){
+        Review review1 = new Review("good", "joe", 5, "joker");
+        Review review2 = new Review("bad", "bobby", 1, "bobbyjoe");
+        assertEquals("joker", review1.getMovieName());
+        assertEquals("bobbyjoe", review2.getMovieName());
+
+    }
+
 
 }
