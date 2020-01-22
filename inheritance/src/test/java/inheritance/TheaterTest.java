@@ -24,8 +24,8 @@ public class TheaterTest {
     @Test
     public void testAddReview(){
         //creating 2 Review instances
-        Theater review1 = new Theater("joker", "joe", 5);
-        Theater review2 = new Theater("purge", "bobby", 1);
+        Review review1 = new Review("joker", "joe", 5);
+        Review review2 = new Review("purge", "bobby", 1);
 
         //to create a movie instance
         Theater joker = new Theater("joker", "$$$");
@@ -46,21 +46,27 @@ public class TheaterTest {
     }
 
 
-
     @Test
     public void testAddMovie(){
-        Theater movieone = new Theater("joker");
-        Theater movietwo = new Theater("purge");
-        assertEquals(movieone.addMovie());
-        assertEquals(movietwo.addMovie());
+        Movie joker = new Movie("joker");
+        Theater imax = new Theater("imax", "$$$");
+        imax.addMovie(joker);
+        assertEquals("should be one",1, imax.movies.size());
+
+
 
     }
+
+
+
     @Test
     public void testRemoveMoive(){
-        Theater movieone = new Theater("joker");
-        Theater movietwo = new Theater("purge");
-        assertEquals(movieone.removeMovie());
-        assertEquals(movietwo.removeMovie());
+        Movie joker = new Movie("joker");
+        Theater imax = new Theater("purge","$$$");
+        imax.addMovie(joker);
+        imax.removeMovie(joker);
+        assertEquals("should be zero",0,imax.movies.size());
+
     }
 
 

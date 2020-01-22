@@ -7,12 +7,18 @@ public class Theater {
     public String price;
     public int star;
     ArrayList<Review> reviews = new ArrayList<>();
-    ArrayList<String> movies = new ArrayList<>();
+    ArrayList<Movie> movies = new ArrayList<>();
 
     public Theater(String name, String price){
         this.name = name;
         this.price = price;
         this.star = 0;
+    }
+
+    public Theater(String name, String price, int rating){
+        this.name = name;
+        this.price = price;
+        this.star = rating;
     }
 
     public String toString(){
@@ -27,11 +33,12 @@ public class Theater {
         updateStars();
     }
 
-    public void addMovie(String movie) {
+    public void addMovie(Movie movie) {
+
         movies.add(movie);
     }
 
-    public void removeMovie(String movie) {
+    public void removeMovie(Movie movie) {
         if(movies.contains(movie))
             movies.remove(movie);
     }
