@@ -16,7 +16,7 @@ public class App {
 
         App application = new App();
 
-        Path filePath = Paths.get("resources/gates.js");
+        Path filePath = Paths.get("src/main/resources/gates.js");
 
         String errorMessages = application.javascriptLinter(filePath);
         System.out.println(errorMessages);
